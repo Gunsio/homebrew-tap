@@ -6,6 +6,7 @@ class Moonbox < Formula
   bottle do
     root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.0"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "bf8a725dc4bb7bb9f12cf1dbf0c5293a93937105af99269ee6813512f5cbdb3c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf8a725dc4bb7bb9f12cf1dbf0c5293a93937105af99269ee6813512f5cbdb3c"
   end
 
