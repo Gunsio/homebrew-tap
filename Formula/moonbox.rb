@@ -3,6 +3,12 @@ class Moonbox < Formula
   homepage "https://github.com/Gunsio/moonbox"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf8a725dc4bb7bb9f12cf1dbf0c5293a93937105af99269ee6813512f5cbdb3c"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/Gunsio/moonbox/releases/download/v0.1.0/moonbox-0.1.0-aarch64-apple-darwin.tar.gz"
