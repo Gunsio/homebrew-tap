@@ -1,7 +1,15 @@
 class Moonbox < Formula
   desc "Cross-CLI session rewind workbench"
   homepage "https://github.com/Gunsio/moonbox"
+  version "0.1.4"
   license "MIT"
+
+  bottle do
+    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4"
+    rebuild 1
+    sha256 arm64_sequoia: "5ad956c3e321a22e703dfe2db91165de62f225c64c0ee8a647942541f447098e"
+    sha256 arm64_tahoe: "5ad956c3e321a22e703dfe2db91165de62f225c64c0ee8a647942541f447098e"
+  end
 
   on_macos do
     on_arm do
