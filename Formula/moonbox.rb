@@ -3,21 +3,15 @@ class Moonbox < Formula
   homepage "https://github.com/Gunsio/moonbox"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38f9d3b614da561f7848b5fd513619d0dbc208356a81f96a6859a8d27743a2b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38f9d3b614da561f7848b5fd513619d0dbc208356a81f96a6859a8d27743a2b3"
-  end
-
   on_macos do
     on_arm do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.2/moonbox-0.1.2-aarch64-apple-darwin.tar.gz"
-      sha256 "df2b8e60bc7a03b8a9c230636751b2de5d2e3ba0ca3f01aa6aba8c40418577be"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4/moonbox-0.1.4-aarch64-apple-darwin.tar.gz"
+      sha256 "ec788b98823006947a226429b16d8f8aebe8b68fef73a79e1839cef245444bd8"
     end
 
     on_intel do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.2/moonbox-0.1.2-source.tar.gz"
-      sha256 "505a1d9bd3c74f0bfc921005136b972f1fba475dac0709e82dbd9171c7645aba"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4/moonbox-0.1.4-source.tar.gz"
+      sha256 "c3a72fcdf9785d1538fb7956ffbc66d528b1f829ee9d52ed67708c9e671f9a08"
 
       depends_on "rust" => :build
     end
@@ -26,8 +20,8 @@ class Moonbox < Formula
   def install
     binary_root = if (buildpath/"bin/moonbox").exist?
       buildpath
-    elsif (buildpath/"moonbox-0.1.2-aarch64-apple-darwin/bin/moonbox").exist?
-      buildpath/"moonbox-0.1.2-aarch64-apple-darwin"
+    elsif (buildpath/"moonbox-0.1.4-aarch64-apple-darwin/bin/moonbox").exist?
+      buildpath/"moonbox-0.1.4-aarch64-apple-darwin"
     end
 
     if binary_root
