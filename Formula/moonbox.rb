@@ -1,25 +1,23 @@
 class Moonbox < Formula
   desc "Cross-CLI session rewind workbench"
   homepage "https://github.com/Gunsio/moonbox"
-  version "0.1.4"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4"
-    rebuild 1
-    sha256 arm64_sequoia: "5ad956c3e321a22e703dfe2db91165de62f225c64c0ee8a647942541f447098e"
-    sha256 arm64_tahoe: "5ad956c3e321a22e703dfe2db91165de62f225c64c0ee8a647942541f447098e"
+    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.45"
+    sha256 arm64_sequoia: "31778aa40b14eb3ea34b0179bc4c730a054bf228a5a005a96f371159055c91f9"
+    sha256 arm64_tahoe:   "31778aa40b14eb3ea34b0179bc4c730a054bf228a5a005a96f371159055c91f9"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4/moonbox-0.1.4-aarch64-apple-darwin.tar.gz"
-      sha256 "ec788b98823006947a226429b16d8f8aebe8b68fef73a79e1839cef245444bd8"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.45/moonbox-0.1.5-beta.45-aarch64-apple-darwin.tar.gz"
+      sha256 "fcc3d46bf20086ffad247f53894b04e9682700567e1f9a6ae3b3711972a0df45"
     end
 
     on_intel do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.4/moonbox-0.1.4-source.tar.gz"
-      sha256 "c3a72fcdf9785d1538fb7956ffbc66d528b1f829ee9d52ed67708c9e671f9a08"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.45/moonbox-0.1.5-beta.45-source.tar.gz"
+      sha256 "aeabfa9b7e3b7af4d37b504a50db90c98abce82313a1c470b28a82f5705db85b"
 
       depends_on "rust" => :build
     end
@@ -28,8 +26,8 @@ class Moonbox < Formula
   def install
     binary_root = if (buildpath/"bin/moonbox").exist?
       buildpath
-    elsif (buildpath/"moonbox-0.1.4-aarch64-apple-darwin/bin/moonbox").exist?
-      buildpath/"moonbox-0.1.4-aarch64-apple-darwin"
+    elsif (buildpath/"moonbox-0.1.5-beta.45-aarch64-apple-darwin/bin/moonbox").exist?
+      buildpath/"moonbox-0.1.5-beta.45-aarch64-apple-darwin"
     end
 
     if binary_root
