@@ -5,13 +5,13 @@ class Moonbox < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.46/moonbox-0.1.5-beta.46-aarch64-apple-darwin.tar.gz"
-      sha256 "a7c90a800bf564d32cb44e1d2d99e839b2ef38d471bca79a389d764ac4c9288d"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.47/moonbox-0.1.5-beta.47-aarch64-apple-darwin.tar.gz"
+      sha256 "5aae6786a50a817d4c9ccaf3ec5b10737a4ac909625180a4dae086b3ce438410"
     end
 
     on_intel do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.46/moonbox-0.1.5-beta.46-source.tar.gz"
-      sha256 "0d4c6ec22892e3117f9944f8e88ba88fa939a6f42cfd96be7e5bad7bd9bf2ac9"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.5-beta.47/moonbox-0.1.5-beta.47-source.tar.gz"
+      sha256 "04a8bd47759a9a8d7dd941d89129d020752ffc1530a25beabe4f1611b510fda9"
 
       depends_on "rust" => :build
     end
@@ -20,8 +20,8 @@ class Moonbox < Formula
   def install
     binary_root = if (buildpath/"bin/moonbox").exist?
       buildpath
-    elsif (buildpath/"moonbox-0.1.5-beta.46-aarch64-apple-darwin/bin/moonbox").exist?
-      buildpath/"moonbox-0.1.5-beta.46-aarch64-apple-darwin"
+    elsif (buildpath/"moonbox-0.1.5-beta.47-aarch64-apple-darwin/bin/moonbox").exist?
+      buildpath/"moonbox-0.1.5-beta.47-aarch64-apple-darwin"
     end
 
     if binary_root
