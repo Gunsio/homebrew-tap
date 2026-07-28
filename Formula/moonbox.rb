@@ -4,19 +4,19 @@ class Moonbox < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.15"
-    sha256 arm64_sequoia: "01b3cb8b7283d9e9e14b43fb8bf46b0d869fb0c26894bdf363899972362b29fd"
+    root_url "https://github.com/Gunsio/moonbox/releases/download/v0.1.16"
+    sha256 arm64_sequoia: "47bef76cd775da2e3a86a1a0dbe0a73479bf2821f9d0f2d17ec99e8296d65cd4"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.15/moonbox-0.1.15-aarch64-apple-darwin.tar.gz"
-      sha256 "1d53eed21f195c6b2856cedff3d3e852be75ed51be533a6bd4e60684e2fda6d9"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.16/moonbox-0.1.16-aarch64-apple-darwin.tar.gz"
+      sha256 "e80d0eabc8cb61b9f356a6789cacce0a9dbd35725df99523ac8cd4a409f9c07c"
     end
 
     on_intel do
-      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.15/moonbox-0.1.15-source.tar.gz"
-      sha256 "064e5f431fbe40c17983fb90c2374a4df12a76093a5e1c16c0a17a6dc0b42acb"
+      url "https://github.com/Gunsio/moonbox/releases/download/v0.1.16/moonbox-0.1.16-source.tar.gz"
+      sha256 "1f4f5c7febad02a44b97940f343e90d208967131c4c3b1b07e0c92b8f2651e0e"
 
       depends_on "rust" => :build
     end
@@ -25,8 +25,8 @@ class Moonbox < Formula
   def install
     binary_root = if (buildpath/"bin/moonbox").exist?
       buildpath
-    elsif (buildpath/"moonbox-0.1.15-aarch64-apple-darwin/bin/moonbox").exist?
-      buildpath/"moonbox-0.1.15-aarch64-apple-darwin"
+    elsif (buildpath/"moonbox-0.1.16-aarch64-apple-darwin/bin/moonbox").exist?
+      buildpath/"moonbox-0.1.16-aarch64-apple-darwin"
     end
 
     if binary_root
@@ -40,8 +40,8 @@ class Moonbox < Formula
   end
 
   test do
-    assert_match "moonbox", shell_output("#{bin}/moonbox --version")
-    assert_match "moonbox", shell_output("#{bin}/moon --version")
+    assert_equal "moonbox #{version}\n", shell_output("#{bin}/moonbox --version")
+    assert_equal "moonbox #{version}\n", shell_output("#{bin}/moon --version")
     assert_match "fixture_only", shell_output("#{bin}/moonbox replay-eval --json")
     assert_match "_moonbox", shell_output("#{bin}/moonbox completions bash")
     assert_match "complete -c moon", shell_output("#{bin}/moon completions fish")
